@@ -1,0 +1,81 @@
+\documentclass[reqno,a4paper,12pt]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm,geometry,xcolor,soul,graphicx}
+\usepackage{titlesec}
+\usepackage{enumerate}
+\usepackage{lipsum}
+\usepackage{listings}
+\RequirePackage[most]{tcolorbox}
+\usepackage{braket}
+\allowdisplaybreaks[4] %align公式跨页
+\usepackage{xeCJK}
+\setCJKmainfont{Kai}
+\geometry{left=0.7in, right=0.7in, top=1in, bottom=1in}
+
+\renewcommand{\baselinestretch}{1.3}
+
+\title{表面物理作业}
+\author{董建宇 ~~ 202328000807038}
+
+\begin{document}
+
+\maketitle
+\titleformat{\section}[hang]{\small}{\thesection}{0.8em}{}{}
+\titleformat{\subsection}[hang]{\small}{\thesubsection}{0.8em}{}{}
+
+\begin{enumerate}
+\item 证明有14种Bravais晶体。
+\begin{tcolorbox}[breakable, colback = black!5!white, colframe = black]
+对于七大晶系的加心操作，部分操作会使得晶体点阵与已有点阵相同，并不构成新的Bravais点阵。
+
+举例如下：
+
+对于单斜晶体，添加面心后形成面心单斜晶体，该晶体点阵等价于三斜晶体点阵。如下图：
+
+\begin{center}
+	\includegraphics[scale = 0.18]{face_center_T.jpeg}
+\end{center}
+
+对于单斜晶体增加体心，仍等价于三斜晶体点阵，如下图：
+
+\begin{center}
+	\includegraphics[scale = 0.23]{body_center_T.jpeg}
+\end{center}
+
+对于正方晶体增加面心，该晶体点阵等价于三斜晶体点阵。如下图：
+
+\begin{center}
+	\includegraphics[scale = 0.23]{face_center_ZF.jpeg}
+\end{center}
+
+对于正方晶体增加底心，该晶体点阵等价于三斜晶体点阵。如下图：
+
+\begin{center}
+	\includegraphics[scale = 0.23]{up_center_ZF.jpeg}
+\end{center}
+
+同样地，三方晶体点阵增加面心后与三方晶体点阵等价；三方晶体点阵增加底心后与单斜晶体点阵等价；三方晶体点阵增加体心心后与三方晶体点阵等价。
+
+\end{tcolorbox}
+
+\item 证明$d_{hkl} = \frac{2\pi}{\vert \vec{G}_{hkl} \vert}$
+\begin{tcolorbox}[breakable, colback = black!5!white, colframe = black]
+考虑
+\[
+	\vec{G}_{hkl} = h\vec{b}_1 + k\vec{b}_2 + l\vec{b}_3, ~~ \vec{a}_i \cdot \vec{b}_j = \delta_{ij}.
+\]
+则对于晶面上格点向量$\vec{R} = n_1\vec{a}_1 + n_2\vec{a}_2 + n_3 \vec{a}_3$有：
+\[
+	\vec{G}_{hkl} \cdot \vec{R} = (hn_1+ln_2+kn_3)2\pi = 2m\pi.
+\]
+其中$m$为整数。则相邻两个晶面间距离$d$满足：
+\[
+	\vert \vec{G}_{hkl} \vert d = 2\pi.
+\]
+即有：
+\[
+	d_{hkl} = \frac{2\pi}{\vert \vec{G}_{hkl} \vert}
+\]
+\end{tcolorbox}
+\end{enumerate}
+\end{document}
